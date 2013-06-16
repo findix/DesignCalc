@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">DesignCalc</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_about">Copyright @凤翔FindiX</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
