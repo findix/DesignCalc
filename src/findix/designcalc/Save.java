@@ -17,6 +17,14 @@ public class Save {
 			dir.mkdir();
 		}
 		File file = new File(dir, "data");
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		try {
 			FileInputStream fin = new FileInputStream(file);
 			int length = fin.available();
@@ -40,6 +48,14 @@ public class Save {
 			dir.mkdir();
 		}
 		File file = new File(dir, "data");
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		try {
 			FileWriter fw = new FileWriter(file);
 			fw.write(value);

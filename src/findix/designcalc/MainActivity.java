@@ -268,6 +268,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			String[] lines = editText.getText().toString().split("\r\n");
 			// 获取当前行文本
 			StringBuffer thisLine = new StringBuffer(lines[lines.length - 1]);
+			if (!Character.isDigit(thisLine.charAt(thisLine.length() - 1))
+					&& (thisLine.charAt(thisLine.length() - 1) != ')')) {
+				break;
+			}
 			// 补充括号+验证括号正确性
 			if (Pretreatment.fillParenthese(thisLine) < 0) {
 				exceptionAlert();// 出错闪屏
@@ -278,7 +282,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				editText.append(")");
 				thisLine.append(')');
 			}
-			System.out.println(thisLine);
+			// System.out.println(thisLine);
 			// 预处理
 			thisLine = Pretreatment.doPretreatment(thisLine);
 			if (!Pretreatment.isParenthese(thisLine)) {

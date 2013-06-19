@@ -17,11 +17,9 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:background="#ffffffff"
-            android:ems="13"
+            android:ems="14"
             android:gravity="bottom|right"
             android:orientation="vertical" >
-
-            <!-- style="@style/AudioFileInfoOverlayText" -->
 
             <EditText
                 android:id="@+id/editText"
@@ -117,22 +115,22 @@
                         <Button
                             android:id="@+id/button7"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="7" />
 
                         <Button
                             android:id="@+id/button8"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="8" />
 
                         <Button
                             android:id="@+id/button9"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="9" />
                     </TableRow>
 
@@ -171,22 +169,22 @@
                         <Button
                             android:id="@+id/button1"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="1" />
 
                         <Button
                             android:id="@+id/button2"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="2" />
 
                         <Button
                             android:id="@+id/button3"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="3" />
                     </TableRow>
 
@@ -199,15 +197,15 @@
                             android:id="@+id/button0"
                             style="?android:attr/buttonStyleSmall"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="48dp"
                             android:layout_span="2"
                             android:text="0" />
 
                         <Button
                             android:id="@+id/buttonPoint"
                             style="?android:attr/buttonStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="84dp"
+                            android:layout_height="48dp"
                             android:text="." />
                     </TableRow>
 
