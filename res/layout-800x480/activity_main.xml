@@ -12,6 +12,7 @@
         android:orientation="vertical" >
 
         <LinearLayout
+            android:id="@+id/editTextLayout"
             android:layout_width="280dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
@@ -19,8 +20,6 @@
             android:ems="14"
             android:gravity="bottom|right"
             android:orientation="vertical" >
-
-            <!-- style="@style/AudioFileInfoOverlayText" -->
 
             <EditText
                 android:id="@+id/editText"

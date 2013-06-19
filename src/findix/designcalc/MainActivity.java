@@ -1,9 +1,12 @@
 package findix.designcalc;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import findix.designcalc.arithmetic.Pretreatment;
+import findix.designcalc.arithmetic.StringToArithmetic;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.graphics.Color;
 import android.text.InputType;
@@ -16,9 +19,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity implements OnClickListener {
 	private EditText editText = null;
+	private LinearLayout editTextLayout = null;
 	private Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, point, PI, E = null;
 	private Button add, min, times, div, percentage, CE = null;
 	private Button sin, cos, tan, abs, mod, sqrt, squal, power, Lbrackets,
@@ -35,6 +40,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		editText.setInputType(InputType.TYPE_NULL);
 		editText.setSingleLine(false);
 		editText.setHorizontallyScrolling(true);
+
+		editTextLayout = (LinearLayout) findViewById(R.id.editTextLayout);
 
 		b0 = (Button) findViewById(R.id.button0);
 		b1 = (Button) findViewById(R.id.button1);
@@ -251,17 +258,38 @@ public class MainActivity extends Activity implements OnClickListener {
 			editText.append(")");
 			break;
 		case R.id.button_equ:
-			if (editText.getText().toString().length() == 0)
+			if (isGetValue)
 				break;
-
-			String[] lines = editText.getText().toString().split("\r\n");
-			MPattern MP = new MPattern(lines[lines.length - 1]);
-			for (int i = 0; i < MP.fillParenthese(); i++) {
-				editText.append(")");
+			// 检测editText是否为空
+			if (editText.getText().toString().length() == 0) {
+				break;
 			}
+			// 获取全部文本
+			String[] lines = editText.getText().toString().split("\r\n");
+			// 获取当前行文本
+			StringBuffer thisLine = new StringBuffer(lines[lines.length - 1]);
+			// 补充括号+验证括号正确性
+			if (Pretreatment.fillParenthese(thisLine) < 0) {
+				exceptionAlert();// 出错闪屏
+				break;
+			}
+			int n = Pretreatment.fillParenthese(thisLine);
+			for (int i = 0; i < n; i++) {
+				editText.append(")");
+				thisLine.append(')');
+			}
+			System.out.println(thisLine);
+			// 预处理
+			thisLine = Pretreatment.doPretreatment(thisLine);
+			if (!Pretreatment.isParenthese(thisLine)) {
+				exceptionAlert();// 出错闪屏
+				break;
+			}
+			// System.out.println(thisLine);
 			setTextColor();
 			editText.append("\r\n");
-			double solve = MP.solvePattern(true);
+			double solve = StringToArithmetic.stringToArithmetic(thisLine
+					.toString());
 			NumberFormat ddf1 = NumberFormat.getNumberInstance();
 			ddf1.setMaximumFractionDigits(8);
 			String s = ddf1.format(solve);
@@ -316,6 +344,24 @@ public class MainActivity extends Activity implements OnClickListener {
 				- lines[lines.length - 1].length(),
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		editText.setText(ss);
+	}
+
+	// 出错闪屏
+	private void exceptionAlert() {
+		editTextLayout.setBackgroundColor(Color.parseColor("#CCFF0000"));
+		Handler handler = new Handler();
+		Runnable runnable = new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				// 要做的事情
+				editTextLayout
+						.setBackgroundColor(Color.parseColor("#ffffffff"));
+				;
+			}
+		};
+		// 启动计时器：
+		handler.postDelayed(runnable, 100);
 	}
 
 	@Override
