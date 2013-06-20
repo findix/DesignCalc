@@ -47,6 +47,35 @@ public class Pretreatment {
 		if (expression.toString().contains("()")) {
 			return false;
 		}
+		//右括号后面直接跟数字
+		for (int i = 1; i < expression.length()-1; i++) {
+			if ((expression.charAt(i) == ')' && Character.isDigit(expression
+					.charAt(i + 1)))) {
+				return false;
+			}
+		}
+		// 括号递归验证
+		System.out.println(expression + "开始括号递归验证");
+		for (int i = 0; i < expression.length(); i++) {
+			if (expression.charAt(i) == '(') {
+				int sum = 1;
+				int last = i;
+				for (int j = i+1; j < expression.length(); j++) {
+					if (expression.charAt(j) == '(') {
+						sum++;
+						last = j;
+					}
+					if (expression.charAt(j) == ')') {
+						sum--;
+					}
+					if (sum == 0) {
+						System.out.println(expression.substring(last+1, j));
+						return isParenthese(new StringBuffer(
+								expression.substring(last+1, j)));
+					}
+				}
+			}
+		}
 		return true;
 	}
 
@@ -64,7 +93,7 @@ public class Pretreatment {
 				return -1;
 			}
 		}
-		return lNum-rNum;
+		return lNum - rNum;
 
 	}
 
