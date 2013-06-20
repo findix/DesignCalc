@@ -19,6 +19,13 @@ public class Pretreatment {
 		if (expression.toString().contains(".0.")) {
 			return false;
 		}
+		//小数点后不是数字
+		for (int i = 1; i < expression.length()-1; i++) {
+			if ((expression.charAt(i) == '.' && !Character.isDigit(expression
+					.charAt(i + 1)))) {
+				return false;
+			}
+		}
 		// 只有一个符号
 		if (expression.length() == 1
 				&& !(Character.isDigit(expression.charAt(0)))) {
