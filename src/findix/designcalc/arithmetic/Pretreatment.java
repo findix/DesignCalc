@@ -5,7 +5,7 @@ public class Pretreatment {
 		expression = standardization(expression);
 		// 处理正负号
 		expression = handleMinus(expression);
-		// 处理小数点省略整数部分
+		// 处理小数点省略部分
 		expression = handleDecimal(expression);
 		// // 括号乘法
 		expression = bracketsTimes(expression);
@@ -134,7 +134,12 @@ public class Pretreatment {
 					&& (i == 0 || !Character.isDigit(expression.charAt(i - 1)))) {
 				expression = new StringBuffer(expression).insert(i, '0');
 			}
+			if (expression.charAt(i) == '.'
+					&& (i != 0 || !Character.isDigit(expression.charAt(i + 1)))) {
+				expression = new StringBuffer(expression).insert(i+1, '0');
+			}
 		}
+		
 		return expression;
 	}
 
