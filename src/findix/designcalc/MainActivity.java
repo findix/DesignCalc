@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 
 import findix.designcalc.arithmetic.Pretreatment;
 import findix.designcalc.arithmetic.StringToArithmetic;
+import findix.designcalc.util.Save;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -86,7 +87,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		bk.setOnClickListener(this);
 
 		SpannableString ss = new SpannableString(Save.getValue());
-		String[] lines = ss.toString().split("\r\n");
+		String[] lines = ss.toString().split("\n");
 		ss.setSpan(new ForegroundColorSpan(Color.LTGRAY), 0, ss.length()
 				- lines[lines.length - 1].length(),
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -104,7 +105,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button0:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -113,7 +114,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button1:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -122,7 +123,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button2:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -131,7 +132,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button3:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -140,7 +141,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button4:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -149,7 +150,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button5:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -158,7 +159,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button6:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -167,7 +168,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button7:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -176,7 +177,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button8:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -185,7 +186,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button9:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -194,7 +195,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.buttonPoint:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -203,7 +204,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_add:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -212,7 +213,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_minus:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -221,7 +222,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_times:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -230,7 +231,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_div:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -242,7 +243,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_lbrackets:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -251,7 +252,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.button_rbrackets:
 			if (isGetValue) {
 				setTextColor();
-				editText.append("\r\n");
+				editText.append("\n");
 				editText.setSelection(editText.getText().length());
 				isGetValue = false;
 			}
@@ -265,16 +266,16 @@ public class MainActivity extends Activity implements OnClickListener {
 				break;
 			}
 			// 获取全部文本
-			String[] lines = editText.getText().toString().split("\r\n");
+			String[] lines = editText.getText().toString().split("\n");
 			// 获取当前行文本
 			StringBuffer thisLine = new StringBuffer(lines[lines.length - 1]);
-			//判断是否以数字或括号结尾
+			// 判断是否以数字或括号结尾
 			if (!Character.isDigit(thisLine.charAt(thisLine.length() - 1))
 					&& (thisLine.charAt(thisLine.length() - 1) != ')')) {
 				exceptionAlert();// 出错闪屏
 				break;
 			}
-			System.out.println(thisLine+"以数字或括号结尾正确性通过");
+			// System.out.println(thisLine+"以数字或括号结尾正确性通过");
 			// 补充括号+验证括号正确性
 			if (Pretreatment.fillParenthese(thisLine) < 0) {
 				exceptionAlert();// 出错闪屏
@@ -285,54 +286,56 @@ public class MainActivity extends Activity implements OnClickListener {
 				editText.append(")");
 				thisLine.append(')');
 			}
-			System.out.println(thisLine+"补充括号+验证括号正确性通过");
+			// System.out.println(thisLine+"补充括号+验证括号正确性通过");
 			// 预处理
 			thisLine = Pretreatment.doPretreatment(thisLine);
 			if (!Pretreatment.isParenthese(thisLine)) {
 				exceptionAlert();// 出错闪屏
 				break;
 			}
-			System.out.println(thisLine+"预处理通过");
+			// System.out.println(thisLine+"预处理通过");
 			setTextColor();
-			editText.append("\r\n");
+			editText.append("\n");
 			double solve = StringToArithmetic.stringToArithmetic(thisLine
 					.toString());
 			NumberFormat ddf1 = NumberFormat.getNumberInstance();
 			ddf1.setMaximumFractionDigits(8);
+			ddf1.setGroupingUsed(false);
 			String s = ddf1.format(solve);
 			editText.append(((Math.round(solve) - solve == 0) ? String
-					.valueOf((int) solve) : s));
+					.valueOf((int) solve) : s.toString()));
 			editText.setSelection(editText.getText().length());
 			isGetValue = true;
 			break;
 		case R.id.button_bk:
+			if (isGetValue)
+				break;
 			editText.clearFocus();
-			if (editText.length() != 0) {
+			if (editText.length() != 0
+					&& !(editText.getText().toString()
+							.substring(editText.getText().length() - 1)
+							.contains("\n"))) {
 				editText.setText(editText
 						.getText()
 						.toString()
 						.substring(0,
 								editText.getText().toString().length() - 1));
 			}
-			if (editText.getText().toString().length() >= 2
-					&& editText.getText().toString()
-							.substring(editText.getText().length() - 2)
-							.contains("\r\n")) {
-				editText.setText(editText
-						.getText()
-						.toString()
-						.substring(0,
-								editText.getText().toString().length() - 2));
+			if (editText.getText().toString()
+					.substring(editText.getText().length() - 1).contains("\n")) {
+				setTextColor();
+			}else{
+				setTextColorExceptLastLine();
 			}
-			setTextColorExceptLastLine();
 			editText.setSelection(editText.getText().length());
+			isGetValue = false;
 			break;
 		}
 	}
 
 	private void setTextColor() {
 		SpannableString ss = new SpannableString(editText.getText());
-		String[] lines = ss.toString().split("\r\n");
+		String[] lines = ss.toString().split("\n");
 		ss.setSpan(new ForegroundColorSpan(Color.LTGRAY), 0, ss.length(),
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		ss.setSpan(new AbsoluteSizeSpan(24, true), 0, ss.length(),
@@ -343,15 +346,16 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private void setTextColorExceptLastLine() {
 		SpannableString ss = new SpannableString(editText.getText());
-		String[] lines = ss.toString().split("\r\n");
+		String[] lines = ss.toString().split("\n");
 		ss.setSpan(new ForegroundColorSpan(Color.LTGRAY), 0, ss.length()
-				- lines[lines.length - 1].length(),
+				- lines[lines.length - 1].length() - 1,
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		ss.setSpan(new AbsoluteSizeSpan(24, true), 0, ss.length()
-				- lines[lines.length - 1].length(),
+				- lines[lines.length - 1].length() - 1,
 				Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		editText.setText(ss);
 	}
+	
 
 	// 出错闪屏
 	private void exceptionAlert() {

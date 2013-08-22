@@ -1,5 +1,7 @@
 package findix.designcalc.arithmetic;
 
+import java.util.regex.Pattern;
+
 public class Pretreatment {
 	public static StringBuffer doPretreatment(StringBuffer expression) {
 		expression = standardization(expression);
@@ -15,12 +17,16 @@ public class Pretreatment {
 	public static boolean isParenthese(StringBuffer expression) {
 		// System.out.println(expression.toString());
 		String symbols = "+-*/";
+		// 只有一个数字
+		 Pattern pattern = Pattern.compile("[0-9]*"); 
+		 if (pattern.matcher(expression.toString()).matches())
+		   return false; 
 		// 多个小数点
 		if (expression.toString().contains(".0.")) {
 			return false;
 		}
-		//小数点后不是数字
-		for (int i = 1; i < expression.length()-1; i++) {
+		// 小数点后不是数字
+		for (int i = 1; i < expression.length() - 1; i++) {
 			if ((expression.charAt(i) == '.' && !Character.isDigit(expression
 					.charAt(i + 1)))) {
 				return false;
@@ -54,20 +60,20 @@ public class Pretreatment {
 		if (expression.toString().contains("()")) {
 			return false;
 		}
-		//右括号后面直接跟数字
-		for (int i = 1; i < expression.length()-1; i++) {
+		// 右括号后面直接跟数字
+		for (int i = 1; i < expression.length() - 1; i++) {
 			if ((expression.charAt(i) == ')' && Character.isDigit(expression
 					.charAt(i + 1)))) {
 				return false;
 			}
 		}
 		// 括号递归验证
-		System.out.println(expression + "开始括号递归验证");
+		//System.out.println(expression + "开始括号递归验证");
 		for (int i = 0; i < expression.length(); i++) {
 			if (expression.charAt(i) == '(') {
 				int sum = 1;
 				int last = i;
-				for (int j = i+1; j < expression.length(); j++) {
+				for (int j = i + 1; j < expression.length(); j++) {
 					if (expression.charAt(j) == '(') {
 						sum++;
 						last = j;
@@ -76,9 +82,9 @@ public class Pretreatment {
 						sum--;
 					}
 					if (sum == 0) {
-						System.out.println(expression.substring(last+1, j));
+						//System.out.println(expression.substring(last + 1, j));
 						return isParenthese(new StringBuffer(
-								expression.substring(last+1, j)));
+								expression.substring(last + 1, j)));
 					}
 				}
 			}
@@ -134,12 +140,11 @@ public class Pretreatment {
 					&& (i == 0 || !Character.isDigit(expression.charAt(i - 1)))) {
 				expression = new StringBuffer(expression).insert(i, '0');
 			}
-			if (expression.charAt(i) == '.'
-					&& (i != 0 || !Character.isDigit(expression.charAt(i + 1)))) {
-				expression = new StringBuffer(expression).insert(i+1, '0');
+			if (expression.charAt(i) == '.' && i != 0
+					&& !Character.isDigit(expression.charAt(i + 1))) {
+				expression = new StringBuffer(expression).deleteCharAt(i);
 			}
 		}
-		
 		return expression;
 	}
 

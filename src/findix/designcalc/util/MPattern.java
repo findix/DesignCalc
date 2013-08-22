@@ -1,4 +1,4 @@
-package findix.designcalc;
+package findix.designcalc.util;
 
 public class MPattern {
 	private final String abs = "abs";

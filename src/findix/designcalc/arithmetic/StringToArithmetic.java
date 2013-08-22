@@ -80,6 +80,7 @@ public class StringToArithmetic {
 		}
 		while (stack.size() != 0)
 			suffix += " " + stack.pop();
+		System.out.println(suffix);
 		return suffix;
 	}
 

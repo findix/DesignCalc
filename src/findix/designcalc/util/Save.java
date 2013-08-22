@@ -1,4 +1,4 @@
-package findix.designcalc;
+package findix.designcalc.util;
 
 import java.io.File;
 import java.io.FileInputStream;
