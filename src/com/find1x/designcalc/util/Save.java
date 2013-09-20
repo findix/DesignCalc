@@ -1,4 +1,4 @@
-package findix.designcalc.util;
+package com.find1x.designcalc.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import org.apache.http.util.EncodingUtils;
 public class Save {
 
 	public static String getValue() {
-		String packageNameString = "findix.designcalc";
+		String packageNameString = "com.find1x.designcalc";
 		String res = null;
 		File dir = new File("data/data/" + packageNameString + "/databases");
 		if (!dir.exists() || !dir.isDirectory()) {
@@ -42,7 +42,7 @@ public class Save {
 	}
 
 	public static void inputValue(String value) {
-		String packageNameString = "findix.designcalc";
+		String packageNameString = "com.find1x.designcalc";
 		File dir = new File("data/data/" + packageNameString + "/databases");
 		if (!dir.exists() || !dir.isDirectory()) {
 			dir.mkdir();

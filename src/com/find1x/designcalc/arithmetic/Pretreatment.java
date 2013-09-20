@@ -1,4 +1,4 @@
-package findix.designcalc.arithmetic;
+package com.find1x.designcalc.arithmetic;
 
 import java.util.regex.Pattern;
 

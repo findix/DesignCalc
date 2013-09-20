@@ -1,10 +1,12 @@
-package findix.designcalc;
+package com.find1x.designcalc;
 
 import java.text.NumberFormat;
 
-import findix.designcalc.arithmetic.Pretreatment;
-import findix.designcalc.arithmetic.StringToArithmetic;
-import findix.designcalc.util.Save;
+import com.find1x.designcalc.arithmetic.Pretreatment;
+import com.find1x.designcalc.arithmetic.StringToArithmetic;
+import com.find1x.designcalc.util.Save;
+
+import com.find1x.designcalc.R;
 
 import android.os.Bundle;
 import android.os.Handler;
