@@ -241,6 +241,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button_ce:
 			editText.setText("");
+			isGetValue = true;
 			break;
 		case R.id.button_lbrackets:
 			if (isGetValue) {
